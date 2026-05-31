@@ -419,6 +419,7 @@ h1, h2, h3, .logo, .btn {
     font-size: 2rem;
     color: var(--accent-yellow);
     margin-bottom: 0.5rem;
+    font-style: italic;
 }
 
 .project-info p {
