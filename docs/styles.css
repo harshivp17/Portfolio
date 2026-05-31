@@ -4,7 +4,7 @@
     --text-light: #F4F4F4;
     --border-dark: #1A1A1A;
     --panel-bg: #1C1C1C;
-    --font-heading: 'Anton', sans-serif;
+    --font-heading: 'Bangers', cursive;
     --font-body: 'Oswald', sans-serif;
     --border-thick: 4px solid var(--accent-yellow);
     --shadow-hard: 8px 8px 0px rgba(255, 234, 0, 0.8);
@@ -35,7 +35,7 @@ body {
 /* Typography */
 h1, h2, h3, .logo, .btn {
     font-family: var(--font-heading);
-    letter-spacing: 4px;
+    letter-spacing: 8px;
     text-transform: uppercase;
 }
 
@@ -141,7 +141,7 @@ h1, h2, h3, .logo, .btn {
     top: 20%;
     right: 10%;
     font-family: var(--font-heading);
-    letter-spacing: 4px;
+    letter-spacing: 8px;
     font-size: 5rem;
     color: var(--accent-yellow);
     text-shadow: -4px -4px 0 #000, 4px -4px 0 #000, -4px 4px 0 #000, 4px 4px 0 #000, 8px 8px 0 #ff0000;
@@ -269,7 +269,7 @@ h1, h2, h3, .logo, .btn {
     color: #000;
     padding: 0.2rem 1rem;
     font-family: var(--font-heading);
-    letter-spacing: 4px;
+    letter-spacing: 8px;
     font-size: 1.2rem;
     margin-bottom: 1rem;
     transform: skew(-10deg);
