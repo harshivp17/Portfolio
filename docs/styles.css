@@ -563,7 +563,17 @@ footer {
     .section-title {
         font-size: 3rem;
     }
+    .navbar {
+        padding: 1rem;
+    }
+    .logo {
+        font-size: 1.3rem;
+    }
     .nav-links {
-        display: none; /* simple mobile nav for now */
+        display: flex;
+        gap: 1rem;
+    }
+    .nav-links a {
+        font-size: 0.9rem;
     }
 }
