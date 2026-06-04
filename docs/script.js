@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Dynamic scroll tracking: progress bar, background parallax, and BOOM badge rotation
     const boom = document.querySelector('.comic-boom');
-    const scrollIndicator = document.querySelector('.scroll-hint-left');
+    const scrollIndicator = document.querySelector('.scroll-down-mouse');
     window.addEventListener('scroll', () => {
         const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -70,9 +70,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     }
     
-    // Initial navbar animation trigger
+    // Initial navbar and scroll indicator animation trigger
     setTimeout(() => {
         const nav = document.querySelector('.navbar');
         if(nav) nav.classList.add('in-view');
     }, 100);
+    setTimeout(() => {
+        if(scrollIndicator) scrollIndicator.classList.add('show');
+    }, 300);
 });
