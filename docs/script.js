@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Dynamic scroll tracking: progress bar, background parallax, and BOOM badge rotation
     const boom = document.querySelector('.comic-boom');
+    const scrollIndicator = document.querySelector('.scroll-down-indicator');
     window.addEventListener('scroll', () => {
         const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -48,6 +49,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // 3. Dynamic BOOM! badge rotation
         if (boom) {
             boom.style.transform = `scale(1) rotate(${15 + winScroll * 0.05}deg)`;
+        }
+
+        // 4. Fade out scroll indicator on scroll
+        if (scrollIndicator) {
+            const opacity = Math.max(1 - winScroll / 200, 0);
+            scrollIndicator.style.opacity = opacity;
+            scrollIndicator.style.visibility = opacity === 0 ? 'hidden' : 'visible';
         }
     });
 
