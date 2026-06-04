@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Dynamic scroll tracking: progress bar, background parallax, and BOOM badge rotation
     const boom = document.querySelector('.comic-boom');
-    const scrollIndicator = document.querySelector('.scroll-down-mouse');
+    const scrollIndicators = document.querySelectorAll('.scroll-down-mouse, .comic-scroll-badge');
     window.addEventListener('scroll', () => {
         const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -51,12 +51,12 @@ document.addEventListener('DOMContentLoaded', () => {
             boom.style.transform = `scale(1) rotate(${15 + winScroll * 0.05}deg)`;
         }
 
-        // 4. Fade out scroll indicator on scroll
-        if (scrollIndicator) {
+        // 4. Fade out scroll indicators on scroll
+        scrollIndicators.forEach(indicator => {
             const opacity = Math.max(1 - winScroll / 200, 0);
-            scrollIndicator.style.opacity = opacity;
-            scrollIndicator.style.visibility = opacity === 0 ? 'hidden' : 'visible';
-        }
+            indicator.style.opacity = opacity;
+            indicator.style.visibility = opacity === 0 ? 'hidden' : 'visible';
+        });
     });
 
     // Add glitch effect interval to title
@@ -75,7 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const nav = document.querySelector('.navbar');
         if(nav) nav.classList.add('in-view');
     }, 100);
+    const scrollDownMouse = document.querySelector('.scroll-down-mouse');
     setTimeout(() => {
-        if(scrollIndicator) scrollIndicator.classList.add('show');
+        if(scrollDownMouse) scrollDownMouse.classList.add('show');
     }, 300);
 });
