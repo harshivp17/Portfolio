@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Dynamic scroll tracking: progress bar, background parallax, and BOOM badge rotation
     const boom = document.querySelector('.comic-boom');
-    const scrollIndicator = document.querySelector('.scroll-down-indicator');
+    const scrollIndicator = document.querySelector('.scroll-hint-left');
     window.addEventListener('scroll', () => {
         const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
