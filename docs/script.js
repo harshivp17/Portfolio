@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Dynamic scroll tracking: progress bar, background parallax, and BOOM badge rotation
     const boom = document.querySelector('.comic-boom');
-    const scrollIndicators = document.querySelectorAll('.scroll-down-mouse, .comic-scroll-badge');
+    const scrollIndicator = document.querySelector('.scroll-down-mouse');
     window.addEventListener('scroll', () => {
         const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -51,12 +51,12 @@ document.addEventListener('DOMContentLoaded', () => {
             boom.style.transform = `scale(1) rotate(${15 + winScroll * 0.05}deg)`;
         }
 
-        // 4. Fade out scroll indicators on scroll
-        scrollIndicators.forEach(indicator => {
+        // 4. Fade out scroll indicator on scroll
+        if (scrollIndicator) {
             const opacity = Math.max(1 - winScroll / 200, 0);
-            indicator.style.opacity = opacity;
-            indicator.style.visibility = opacity === 0 ? 'hidden' : 'visible';
-        });
+            scrollIndicator.style.opacity = opacity;
+            scrollIndicator.style.visibility = opacity === 0 ? 'hidden' : 'visible';
+        }
     });
 
     // Add glitch effect interval to title

@@ -627,33 +627,7 @@ footer {
     }
 }
 
-/* Comic Scroll Badge (Left Side) */
-.comic-scroll-badge {
-    position: absolute;
-    top: 45%;
-    left: 8%;
-    font-family: var(--font-heading);
-    font-size: 4rem;
-    color: var(--accent-yellow);
-    text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 3px 3px 0 #000, 6px 6px 0 #ff0000;
-    transform: rotate(-15deg);
-    pointer-events: none;
-    transition: opacity 0.3s, visibility 0.3s;
-}
 
-@media (max-width: 1024px) {
-    .comic-scroll-badge {
-        font-size: 3rem;
-        left: 3%;
-        top: 50%;
-    }
-}
-
-@media (max-width: 768px) {
-    .comic-scroll-badge {
-        display: none;
-    }
-}
 
 @media (max-width: 480px) {
     .scroll-down-mouse {
