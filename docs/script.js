@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Create scroll progress bar dynamically
+    const progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress';
+    document.body.appendChild(progressBar);
+
     // Intersection Observer for scroll animations
     const observerOptions = {
         root: null,
@@ -23,6 +28,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     animatedElements.forEach(el => {
         observer.observe(el);
+    });
+
+    // Dynamic scroll tracking: progress bar, background parallax, and BOOM badge rotation
+    const boom = document.querySelector('.comic-boom');
+    window.addEventListener('scroll', () => {
+        const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        
+        // 1. Update progress bar
+        if (height > 0) {
+            const scrolledPercent = (winScroll / height) * 100;
+            progressBar.style.width = `${scrolledPercent}%`;
+        }
+
+        // 2. Parallax background halftone shift
+        document.body.style.backgroundPositionY = `${winScroll * 0.15}px`;
+
+        // 3. Dynamic BOOM! badge rotation
+        if (boom) {
+            boom.style.transform = `scale(1) rotate(${15 + winScroll * 0.05}deg)`;
+        }
     });
 
     // Add glitch effect interval to title

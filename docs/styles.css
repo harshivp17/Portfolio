@@ -527,12 +527,12 @@ footer {
     visibility: hidden;
 }
 
-.animate-slide-left { transform: translateX(-100px); }
-.animate-slide-right { transform: translateX(100px); }
-.animate-slide-down { transform: translateY(-50px); }
-.animate-pop { transform: scale(0.8); }
-.animate-fade-in { transform: translateY(30px); }
-.animate-zoom { transform: scale(0.5) rotate(-10deg); }
+.animate-slide-left { transform: translateX(-100px) skewX(-10deg); }
+.animate-slide-right { transform: translateX(100px) skewX(10deg); }
+.animate-slide-down { transform: translateY(-50px) skewY(-5deg); }
+.animate-pop { transform: scale(0.8) rotate(-4deg); }
+.animate-fade-in { transform: translateY(40px) scale(0.95); }
+.animate-zoom { transform: scale(0.5) rotate(-25deg); }
 
 /* Active states */
 .in-view {
@@ -547,6 +547,19 @@ footer {
 }
 .contact-box.animate-zoom.in-view {
     transform: scale(1) rotate(0deg);
+}
+
+/* Scroll Progress Bar */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background-color: var(--accent-yellow);
+    z-index: 2000;
+    width: 0%;
+    transition: width 0.1s ease-out;
+    box-shadow: 0 0 8px var(--accent-yellow);
 }
 
 .delay-1 { transition-delay: 0.2s; }
